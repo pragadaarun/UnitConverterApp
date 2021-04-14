@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Unit Converter</string>
+
+    <string-array name="Quantities">
+        <item>Please select a conversion Type</item>
+        <item>Length</item>
+        <item>Weight</item>
+        <item>Volume</item>
+        <item>Temperature</item>
+    </string-array>
+
+    <string-array name="WeightUnits">
+        <item>Kilogram</item>
+        <item>Gram</item>
+        <item>Ton</item>
+    </string-array>
+
+    <string-array name="LengthUnits">
+        <item>Kilometer</item>
+        <item>Meter</item>
+        <item>Inch</item>
+        <item>Feet</item>
+    </string-array>
+
+    <string-array name="VolumeUnits">
+        <item>Liter</item>
+        <item>Milliliter </item>
+    </string-array>
+
+    <string-array name="TemperatureUnits">
+        <item>Centigrade</item>
+        <item>Fahrenheit </item>
+    </string-array>>
+
+    <string name="button">Button</string>
+
+</resources>
