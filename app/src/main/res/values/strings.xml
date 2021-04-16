@@ -2,7 +2,6 @@
     <string name="app_name">Unit Converter</string>
 
     <string-array name="Quantities">
-        <item>Please select a conversion Type</item>
         <item>Length</item>
         <item>Weight</item>
         <item>Volume</item>
@@ -10,16 +9,16 @@
     </string-array>
 
     <string-array name="WeightUnits">
+        <item>Ton</item>
         <item>Kilogram</item>
         <item>Gram</item>
-        <item>Ton</item>
     </string-array>
 
     <string-array name="LengthUnits">
         <item>Kilometer</item>
         <item>Meter</item>
-        <item>Inch</item>
         <item>Feet</item>
+        <item>Inch</item>
     </string-array>
 
     <string-array name="VolumeUnits">
@@ -28,10 +27,12 @@
     </string-array>
 
     <string-array name="TemperatureUnits">
-        <item>Centigrade</item>
+        <item>Celsius</item>
         <item>Fahrenheit </item>
     </string-array>>
 
     <string name="button">Button</string>
+    <string name="unit_converter">Unit Converter</string>
+    <string name="from_unit">From Unit</string>
 
 </resources>
