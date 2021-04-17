@@ -3,44 +3,86 @@ package com.example.unitconverter;
 public class WeightClass {
     public String result = "";
 
-    public String calculate(double inputValue, String fromUnit, String toUnit) {
-        double thousandInverse = 0.001;
-        double thousand = 1000;
-        double tenLakh = 100000;
-        double tenLakhInverse = 0.000001;
+    public String calculate(int inputValue, String fromUnit, String toUnit) {
+        weightUnit fromType = weightUnit.valueOf(fromUnit);
+        weightUnit toType = weightUnit.valueOf(toUnit);
 
-        if(fromUnit.equals(toUnit)){
-            result = String.format("%f",inputValue);
+        switch(fromType) {
+            case Ton:
+                result = (fromType.tonConvert(toType, inputValue));
+                break;
+            case Kilogram:
+                result = (fromType.kilogramConvert(toType, inputValue));
+                break;
+            case Gram:
+                result = (fromType.gramConvert(toType, inputValue));
+                break;
+            default:
+                break;
         }
-        else if(fromUnit.equals("Ton") && toUnit.equals("Kilogram")){
-            double calculation = inputValue * thousand;
-            result = String.format("%f",calculation);
-        }
-        else if(fromUnit.equals("Ton") && toUnit.equals("Gram")){
-            double calculation = inputValue * tenLakh;
-            result = String.format("%f",calculation);
-        }
-        else if(fromUnit.equals("Kilogram") && toUnit.equals("Ton")){
-            double calculation = inputValue * thousandInverse;
-            result = String.format("%f",calculation);
-        }
-        else if(fromUnit.equals("Kilogram") && toUnit.equals("Gram")){
-            double calculation = inputValue * thousand;
-            result = String.format("%f",calculation);
-        }
-        else if(fromUnit.equals("Gram") && toUnit.equals("Ton")){
-            double calculation = inputValue * tenLakhInverse;
-            result = String.format("%f",calculation);
-        }
-        else if(fromUnit.equals("Gram") && toUnit.equals("Kilogram")){
-            double calculation = inputValue * thousandInverse;
-            result = String.format("%f",calculation);
-        }
-        else{
-            // do nothing
-        }
-
         return result;
     }
 
+}
+
+enum weightUnit{
+    Ton, Kilogram, Gram;
+
+    public String tonConvert(weightUnit toType, int value) {
+        double calculated = 0.0;
+        switch (toType) {
+            case Ton:
+                calculated = value;
+                break;
+            case Kilogram:
+                calculated = value * 1000;
+                break;
+            case Gram:
+                calculated = value * 1000000;
+                break;
+            default :
+                break;
+        }
+
+        return String.valueOf(calculated);
+    }
+
+    public String kilogramConvert(weightUnit toType, int value) {
+        double calculated = 0.0;
+        switch (toType) {
+            case Ton:
+                calculated = value * 0.001;
+                break;
+            case Kilogram:
+                calculated = value;
+                break;
+            case Gram:
+                calculated = value * 1000;
+                break;
+            default:
+                break;
+        }
+
+        return String.valueOf(calculated);
+
+    }
+    public String gramConvert(weightUnit toType, int value) {
+        double calculated = 0.0;
+        switch (toType){
+            case Ton:
+                calculated = value * 0.000001;
+                break;
+            case Kilogram:
+                calculated = value * 0.001;
+                break;
+            case Gram:
+                calculated = value;
+                break;
+            default:
+                break;
+
+        }
+
+        return String.valueOf(calculated);
+    }
 }

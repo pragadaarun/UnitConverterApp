@@ -2,42 +2,54 @@ package com.example.unitconverter;
 
 public class TemperatureClass {
     public String result = "";
+    public String calculate(int inputValue, String fromUnit, String toUnit) {
+        temperatureUnit fromType = temperatureUnit.valueOf(fromUnit);
+        temperatureUnit toType = temperatureUnit.valueOf(toUnit);
 
-    enum Operands{
-        //toUnit(Celsius Constant, Fahrenheit Constant)
-        Celsius(1,5.556),
-        Fahrenheit(1.8,1);
-
-        public double celsiusConstant;
-        public double fahrenheitConstant;
-
-        Operands(final double celsiusConstant, final double fahrenheitConstant){
-            this.celsiusConstant = celsiusConstant;
-            this.fahrenheitConstant = fahrenheitConstant;
+        switch(fromType) {
+            case Celsius:
+                result = (fromType.celsiusConvert(toType, inputValue));
+                break;
+            case Fahrenheit:
+                result = (fromType.fahrenheitConvert(toType, inputValue));
+                break;
         }
-
+        return result;
     }
 
-    public String calculate(int inputValue, String fromUnit, String toUnit) {
-        double fahrenheitConstant = 5.556;
-        double celsiusConstant = 1.8;
+}
 
-
-        if(fromUnit.equals(toUnit)){
-            result = String.format("%f",inputValue);
-        }
-        else if(fromUnit.equals("Celsius") && toUnit.equals("Fahrenheit")){
-            double calculation = (inputValue-32)*fahrenheitConstant;
-            result = String.format("%f",calculation);
-        }
-        else if(fromUnit.equals("Fahrenheit") && toUnit.equals("Celsius")){
-            double calculation = (inputValue*celsiusConstant) + 32;
-            result = String.format("%f",calculation);
-        }
-        else{
-            // do nothing
+enum temperatureUnit {
+    Celsius, Fahrenheit;
+    public String celsiusConvert(temperatureUnit toType, int value) {
+        double calculated = 0.0;
+        switch (toType) {
+            case Celsius:
+                calculated = value;
+                break;
+            case Fahrenheit:
+                calculated = (value * 1.8) + 32;
+                break;
+            default :
+                break;
         }
 
-        return result;
+        return String.valueOf(calculated);
+    }
+
+    public String fahrenheitConvert(temperatureUnit toType, int value) {
+        double calculated = 0.0;
+        switch (toType) {
+            case Celsius:
+                calculated = (value - 32) * 5.556;
+                break;
+            case Fahrenheit:
+                calculated = value;
+                break;
+            default :
+                break;
+        }
+
+        return String.valueOf(calculated);
     }
 }

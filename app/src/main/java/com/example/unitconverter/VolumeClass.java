@@ -4,25 +4,84 @@ public class VolumeClass {
     public String result = "";
 
     public String calculate(int inputValue, String fromUnit, String toUnit) {
-        double literConstant = 0.001;
-        double milliLiterConstant = 1000;
+        volumeUnit fromType = volumeUnit.valueOf(fromUnit);
+        volumeUnit toType = volumeUnit.valueOf(toUnit);
 
-
-        if(fromUnit.equals(toUnit)){
-            result = String.format("%f",inputValue);
+        switch(fromType) {
+            case Liter:
+                result = (fromType.literConvert(toType, inputValue));
+                break;
+            case Gallon:
+                result = (fromType.gallonConvert(toType, inputValue));
+                break;
+            case Milliliter:
+                result = (fromType.milliliterConvert(toType, inputValue));
+                break;
+            default:
+                break;
         }
-        else if(fromUnit.equals("Milliliter") && toUnit.equals("Liter")){
-            double calculation = inputValue * literConstant;
-            result = String.format("%f",calculation);
-        }
-        else if(fromUnit.equals("Liter") && toUnit.equals("Milliliter")){
-            double calculation = inputValue * milliLiterConstant;
-            result = String.format("%f",calculation);
-        }
-        else{
-            // do nothing
-        }
-
         return result;
     }
+
+}
+
+enum volumeUnit{
+    Liter, Gallon, Milliliter;
+    public String literConvert(volumeUnit toType, int value) {
+        double calculated = 0.0;
+        switch (toType) {
+            case Liter:
+                calculated = value;
+                break;
+            case Gallon:
+                calculated = value * 0.264172;
+                break;
+            case Milliliter:
+                calculated = value * 1000;
+                break;
+            default :
+                break;
+        }
+
+        return String.valueOf(calculated);
+    }
+
+    public String gallonConvert(volumeUnit toType, int value) {
+        double calculated = 0.0;
+        switch (toType) {
+            case Liter:
+                calculated = value * 0.001;
+                break;
+            case Gallon:
+                calculated = value;
+                break;
+            case Milliliter:
+                calculated = value * 3785.41;
+                break;
+            default :
+                break;
+        }
+
+        return String.valueOf(calculated);
+    }
+
+    public String milliliterConvert(volumeUnit toType, int value) {
+        double calculated = 0.0;
+        switch (toType) {
+            case Liter:
+                calculated = value * 0.001;
+                break;
+            case Gallon:
+                calculated = value * 0.000264172;
+            case Milliliter:
+                calculated = value;
+                break;
+            default :
+                break;
+        }
+
+        return String.valueOf(calculated);
+    }
+
+
 }
