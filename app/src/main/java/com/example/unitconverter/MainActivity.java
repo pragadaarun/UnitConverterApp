@@ -2,6 +2,7 @@ package com.example.unitconverter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     Spinner mainSpinner, fromUnitSpinner, toUnitSpinner;
@@ -120,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
             Converter converter = new Converter();
             int inputValue = Integer.parseInt(input.getText().toString());
+
             String resultMessage = converter.calculateOutput(inputValue, selectedType, fromUnit, toUnit);
             Log.e("Spinner", "onCreate: resultMessage" + resultMessage);
             result.setText(resultMessage);
