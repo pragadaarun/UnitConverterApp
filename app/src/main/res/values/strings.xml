@@ -15,14 +15,16 @@
     </string-array>
 
     <string-array name="LengthUnits">
-        <item>Kilometer</item>
+        <item>Centimeter</item>
         <item>Meter</item>
         <item>Feet</item>
         <item>Inch</item>
+        <item>Yard</item>
     </string-array>
 
     <string-array name="VolumeUnits">
         <item>Liter</item>
+        <item>Gallon</item>
         <item>Milliliter </item>
     </string-array>
 
