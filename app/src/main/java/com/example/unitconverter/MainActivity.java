@@ -2,8 +2,6 @@ package com.example.unitconverter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -23,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView result;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) throws NumberFormatException {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -116,17 +114,23 @@ public class MainActivity extends AppCompatActivity {
                 // remain the default or previous type visible
             }
         });
+        try {
+            button.setOnClickListener(v -> {
 
+                if(input.getText().toString().isEmpty()) {
+                    Toast.makeText(MainActivity.this,"Enter the value", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                int inputValue = Integer.parseInt(input.getText().toString());
 
-        button.setOnClickListener(v -> {
+                Converter converter = new Converter();
+                String resultMessage = converter.calculateOutput(inputValue, selectedType, fromUnit, toUnit);
+                Log.e("Spinner", "onCreate: resultMessage" + resultMessage);
+                result.setText(resultMessage);
 
-            Converter converter = new Converter();
-            int inputValue = Integer.parseInt(input.getText().toString());
-
-            String resultMessage = converter.calculateOutput(inputValue, selectedType, fromUnit, toUnit);
-            Log.e("Spinner", "onCreate: resultMessage" + resultMessage);
-            result.setText(resultMessage);
-
-        });
+            });
+        }
+        catch(NumberFormatException e) {
+        }
     }
 }
