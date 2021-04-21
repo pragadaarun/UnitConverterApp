@@ -3,14 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SplashActivity">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="373dp"
         android:layout_height="669dp"
         app:srcCompat="@drawable/ic_unitconverter"
-        tools:layout_editor_absoluteX="-1dp"
-        tools:layout_editor_absoluteY="-7dp" />
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
