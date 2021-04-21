@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".MainActivity"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingBottom="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="20dp">
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
@@ -32,7 +34,7 @@
             android:layout_height="34dp"
             android:duplicateParentState="false"
             android:paddingTop="10dp"
-            android:text="Select Conversion Type"
+            android:text="@string/select_conversion_type"
             android:textSize="18sp" />
 
         <Spinner
@@ -58,7 +60,7 @@
 
             <EditText
                 android:id="@+id/inputEditText"
-                android:layout_width="480dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
@@ -80,7 +82,7 @@
             android:layout_height="wrap_content"
             android:duplicateParentState="false"
             android:paddingTop="10dp"
-            android:text="To Unit"
+            android:text="@string/to_unit"
             android:textSize="18sp" />
 
         <LinearLayout
@@ -90,11 +92,11 @@
 
             <TextView
                 android:id="@+id/outputTextView"
-                android:layout_width="491dp"
+                android:layout_width="0dp"
                 android:layout_height="39dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:hint="Result"
+                android:hint="@string/result"
                 android:textSize="18sp" />
 
             <Spinner
@@ -108,11 +110,11 @@
 
             <Button
                 android:id="@+id/convertButton"
-            android:layout_width="185dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="60dp"
-            android:text="Convert" />
+                android:layout_width="185dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:text="@string/convert" />
 
         </LinearLayout>
 
