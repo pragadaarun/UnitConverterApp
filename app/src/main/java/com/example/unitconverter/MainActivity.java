@@ -114,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 // remain the default or previous type visible
             }
         });
+
         try {
             button.setOnClickListener(v -> {
 
