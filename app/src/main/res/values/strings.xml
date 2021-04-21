@@ -33,8 +33,11 @@
         <item>Fahrenheit </item>
     </string-array>>
 
-    <string name="button">Button</string>
     <string name="unit_converter">Unit Converter</string>
     <string name="from_unit">From Unit</string>
+    <string name="result">Result</string>
+    <string name="convert">Convert</string>
+    <string name="select_conversion_type">Select Conversion Type</string>
+    <string name="to_unit">To Unit</string>
 
 </resources>

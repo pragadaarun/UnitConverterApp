@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">इकाई कनवर्टर</string>
+
+    <string-array name="Quantities">
+        <item>लंबाई</item>
+        <item>वजन</item>
+        <item>आद्यतन मात्रा</item>
+        <item>तापमान</item>
+    </string-array>
+
+    <string-array name="WeightUnits">
+        <item>टन</item>
+        <item>किलोग्राम</item>
+        <item>ग्राम</item>
+    </string-array>
+
+    <string-array name="LengthUnits">
+        <item>सेंटीमीटर</item>
+        <item>मीटर</item>
+        <item>पैर</item>
+        <item>इंच</item>
+        <item>यार्ड</item>
+    </string-array>
+
+    <string-array name="VolumeUnits">
+        <item>लीटर</item>
+        <item>गैलन</item>
+        <item>मिलीलीटर </item>
+    </string-array>
+
+    <string-array name="TemperatureUnits">
+        <item>सेल्सीयस</item>
+        <item>फ़ारेनहाइट </item>
+    </string-array>>
+
+    <string name="unit_converter">इकाई धर्मांतरित</string>
+    <string name="select_conversion_type">रूपांतरण प्रकार चुनें</string>
+    <string name="from_unit">इकाई से</string>
+    <string name="to_unit">इकाई के लिए</string>
+    <string name="result">परिणाम</string>
+    <string name="convert">धर्मांतरित</string>
+
+
+
+</resources>
