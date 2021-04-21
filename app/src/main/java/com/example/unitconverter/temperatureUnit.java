@@ -2,7 +2,7 @@ package com.example.unitconverter;
 
 public enum temperatureUnit {
     Celsius, Fahrenheit;
-    public String celsiusConvert(temperatureUnit toType, int value) {
+    public double celsiusConvert(temperatureUnit toType, int value) {
         double calculated = 0.0;
         switch (toType) {
             case Celsius:
@@ -15,10 +15,10 @@ public enum temperatureUnit {
                 break;
         }
 
-        return String.valueOf(calculated);
+        return calculated;
     }
 
-    public String fahrenheitConvert(temperatureUnit toType, int value) {
+    public double fahrenheitConvert(temperatureUnit toType, int value) {
         double calculated = 0.0;
         switch (toType) {
             case Celsius:
@@ -31,6 +31,6 @@ public enum temperatureUnit {
                 break;
         }
 
-        return String.valueOf(calculated);
+        return calculated;
     }
 }

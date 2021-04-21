@@ -1,8 +1,8 @@
 package com.example.unitconverter;
 
 public class TemperatureClass {
-    public String result = "";
-    public String calculate(int inputValue, String fromUnit, String toUnit) {
+    public double result;
+    public double calculate(int inputValue, String fromUnit, String toUnit) {
         temperatureUnit fromType = temperatureUnit.valueOf(fromUnit);
         temperatureUnit toType = temperatureUnit.valueOf(toUnit);
 
